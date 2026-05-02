@@ -1,159 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axio Top Up - Premium Game Shop</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-bg: #0f172a;
-            --card-bg: #ffffff;
-            --accent-color: #6366f1;
-            --text-main: #1e293b;
-        }
+<div class="packages-container" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 15px;">
 
-        body { 
-            background-color: #f1f5f9; 
-            font-family: 'Poppins', sans-serif; 
-            color: var(--text-main);
-        }
-
-        .navbar { 
-            background-color: var(--primary-bg); 
-            color: white; 
-            padding: 20px; 
-            text-align: center; 
-            font-weight: 600; 
-            font-size: 1.5rem;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .container { max-width: 500px; }
-
-        .card { 
-            border-radius: 20px; 
-            border: none; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
-            margin-top: 40px;
-            padding: 30px;
-            background: var(--card-bg);
-        }
-
-        .section-title {
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 10px;
-        }
-
-        .payment-info { 
-            background: #f8fafc; 
-            padding: 15px; 
-            border-radius: 12px; 
-            margin-bottom: 25px; 
-            font-size: 0.85rem;
-            border: 1px dashed #cbd5e1;
-        }
-
-        .payment-info strong { color: var(--accent-color); }
-
-        .form-label { font-weight: 500; font-size: 0.9rem; margin-bottom: 8px; }
-
-        .form-control, .form-select {
-            border-radius: 10px;
-            padding: 12px;
-            border: 1px solid #e2e8f0;
-            font-size: 0.95rem;
-        }
-
-        .form-control:focus {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-        }
-
-        .btn-order { 
-            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-            color: white; 
-            width: 100%; 
-            border-radius: 12px; 
-            font-weight: 600; 
-            padding: 14px;
-            border: none;
-            margin-top: 20px;
-            transition: transform 0.2s;
-        }
-
-        .btn-order:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
-            color: white;
-        }
-
-        .footer-text {
-            text-align: center;
-            font-size: 0.75rem;
-            margin-top: 20px;
-            color: #94a3b8;
-        }
-    </style>
-</head>
-<body>
-
-<div class="navbar">AXIO TOP UP</div>
-
-<div class="container">
-    <div class="card">
-        <h5 class="section-title">Free Fire UID Topup</h5>
-        
-        <div class="payment-info">
-            <strong>bKash / Nagad (Personal):</strong> 01731231670 <br>
-            <strong>Upay (Personal):</strong> 01737531045 <br>
-            <small class="text-muted">* Please send the money first, then fill the form.</small>
-        </div>
-
-        <form action="/order" method="post">
-            <div class="mb-3">
-                <label class="form-label">Player ID (UID)</label>
-                <input type="text" name="player_id" class="form-control" placeholder="Example: 123456789" required>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Select Diamond Package</label>
-                <select name="package" class="form-select" required>
-                    <option value="" disabled selected>Choose a package</option>
-                    <option value="115 Diamonds - 85 TK">115 Diamonds - 85 TK</option>
-                    <option value="240 Diamonds - 165 TK">240 Diamonds - 165 TK</option>
-                    <option value="Weekly Membership - 160 TK">Weekly Membership - 160 TK</option>
-                    <option value="Monthly Membership - 800 TK">Monthly Membership - 800 TK</option>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Payment Method</label>
-                <select name="payment_method" class="form-select" required>
-                    <option value="bKash">bKash</option>
-                    <option value="Nagad">Nagad</option>
-                    <option value="Upay">Upay</option>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Transaction ID (TrxID)</label>
-                <input type="text" name="trx_id" class="form-control" placeholder="Enter Transaction ID" required>
-            </div>
-
-            <button type="submit" class="btn btn-order">Complete Order</button>
-        </form>
-        
-        <p class="footer-text">© 2026 Axio Top Up. All rights reserved.</p>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        25 Diamond <span style="float: right; color: orange; font-weight: bold;">17 TK</span>
     </div>
-</div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        50 Diamond <span style="float: right; color: orange; font-weight: bold;">31 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        100 Diamond <span style="float: right; color: orange; font-weight: bold;">67 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        115 Diamond <span style="float: right; color: orange; font-weight: bold;">71 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        240 Diamond <span style="float: right; color: orange; font-weight: bold;">147 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        355 Diamond <span style="float: right; color: orange; font-weight: bold;">225 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        505 Diamond <span style="float: right; color: orange; font-weight: bold;">335 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        610 Diamond <span style="float: right; color: orange; font-weight: bold;">380 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        850 Diamond <span style="float: right; color: orange; font-weight: bold;">540 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        1090 Diamond <span style="float: right; color: orange; font-weight: bold;">690 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        1240 Diamond <span style="float: right; color: orange; font-weight: bold;">770 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        1720 Diamond <span style="float: right; color: orange; font-weight: bold;">1085 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        1850 Diamond <span style="float: right; color: orange; font-weight: bold;">1165 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        2090 Diamond <span style="float: right; color: orange; font-weight: bold;">1320 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        2530 Diamond <span style="float: right; color: orange; font-weight: bold;">1535 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        3140 Diamond <span style="float: right; color: orange; font-weight: bold;">1945 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        5060 Diamond <span style="float: right; color: orange; font-weight: bold;">3095 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        10120 Diamond <span style="float: right; color: orange; font-weight: bold;">6195 TK</span>
+    </div>
 
-</body>
-</html>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        Weekly <span style="float: right; color: orange; font-weight: bold;">145 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        2X Weekly <span style="float: right; color: orange; font-weight: bold;">295 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        Monthly <span style="float: right; color: orange; font-weight: bold;">745 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        3X Weekly <span style="float: right; color: orange; font-weight: bold;">455 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        5X Weekly <span style="float: right; color: orange; font-weight: bold;">755 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        2X Monthly <span style="float: right; color: orange; font-weight: bold;">1495 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        1 Weekly + 1 Monthly <span style="float: right; color: orange; font-weight: bold;">900 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        4 Weekly + 1 Monthly <span style="float: right; color: orange; font-weight: bold;">1360 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        5 Weekly + 1 Monthly <span style="float: right; color: orange; font-weight: bold;">1510 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        5X Weekly + Monthly <span style="float: right; color: orange; font-weight: bold;">1510 TK</span>
+    </div>
+
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        Weekly লাইট <span style="float: right; color: orange; font-weight: bold;">37 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        2X Weekly লাইট <span style="float: right; color: orange; font-weight: bold;">80 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        3X Weekly লাইট <span style="float: right; color: orange; font-weight: bold;">125 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        5X Weekly লাইট <span style="float: right; color: orange; font-weight: bold;">210 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        7X Weekly লাইট <span style="float: right; color: orange; font-weight: bold;">295 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        10X Weekly লাইট <span style="float: right; color: orange; font-weight: bold;">425 TK</span>
+    </div>
+
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        Level Up Package - Level 6 <span style="float: right; color: orange; font-weight: bold;">33 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        Level Up Package - Level 10 <span style="float: right; color: orange; font-weight: bold;">60 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        Level Up Package - Level 15 <span style="float: right; color: orange; font-weight: bold;">65 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        Level Up Package - Level 20 <span style="float: right; color: orange; font-weight: bold;">65 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        Level Up Package - Level 25 <span style="float: right; color: orange; font-weight: bold;">65 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        Level Up Package - Level 30 <span style="float: right; color: orange; font-weight: bold;">90 TK</span>
+    </div>
+    <div class="package-card" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: left;">
+        Full Level up pass <span style="float: right; color: orange; font-weight: bold;">415 TK</span>
+    </div>
+
+</div>
