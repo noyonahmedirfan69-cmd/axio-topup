@@ -11,6 +11,17 @@ CHAT_ID = "8691740167"
 @app.route('/')
 def index():
     return render_template('index.html')
+    return """
+    <div style="text-align:center; margin-top:100px; font-family: sans-serif; background-color: #f4f4f4; padding: 20px;">
+        <div style="background: white; display: inline-block; padding: 40px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <h1 style="color: #f39c12;">Order Pending!</h1>
+            <p style="font-size: 18px; color: #333;">Apnar order ti amra peyechi. Ekhon processing-e ache.</p>
+            <p style="color: #666;">Onugroho kore 5-10 minute opekkha korun.</p>
+            <br>
+            <a href="/" style="background: #27ae60; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Back to Home</a>
+        </div>
+    </div>
+    """
 
 @app.route('/order', methods=['POST'])
 def order():
