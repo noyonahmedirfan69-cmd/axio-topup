@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 # Telegram Configuration
 # Replace these with your actual Bot Token and Chat ID
-BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
-CHAT_ID = "YOUR_CHAT_ID_HERE"
+BOT_TOKEN = "8567544194:AAHbkTbjnkTsN2iNznlN5Ek1TtlN_R0ncTE"
+CHAT_ID = "8691740167"
 
 @app.route('/')
 def index():
