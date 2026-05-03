@@ -1,10 +1,10 @@
-from flask import Flask, render_template, request
+echo "from flask import Flask, render_template, request
 import requests
 
 app = Flask(__name__)
 
-TOKEN = "8567544194:AAHbkTbjnkTsN2iNznlN5Ek1TtlN_R0ncTE"
-CHAT_ID = "8691740167"
+TOKEN = '8567544194:AAHbkTbjnkTsN2iNznlN5Ek1TtlN_R0ncTE'
+CHAT_ID = '8691740167'
 
 @app.route('/')
 def index():
@@ -12,51 +12,23 @@ def index():
 
 @app.route('/order', methods=['POST'])
 def order():
-    uid = request.form.get('player_id') or request.form.get('uid')
-    pack = request.form.get('package') or request.form.get('pack')
-    method = request.form.get('payment_method') or request.form.get('method')
-    trx = request.form.get('trx_id') or request.form.get('trx')
+    uid = request.form.get('player_id')
+    pack = request.form.get('package')
+    method = request.form.get('payment_method')
+    trx = request.form.get('trx_id')
     
     text = (
-        "🔔 *NEW TOP-UP ORDER*\n"
-        "━━━━━━━━━━━━━━━━━━━\n"
-        f"👤 *Player ID:* `{uid}`\n"
-        f"💎 *Package:* {pack}\n"
-        f"💳 *Method:* {method}\n"
-        f"🔑 *TrxID:* `{trx}`\n"
-        "━━━━━━━━━━━━━━━━━━━\n"
-        "✅ *Check payment!*"
+        '🔔 *NEW ORDER*\n'
+        f'👤 UID: \`{uid}\`\n'
+        f'💎 Pack: {pack}\n'
+        f'💳 Method: {method}\n'
+        f'🔑 TrxID: \`{trx}\`'
     )
     
-    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
-    payload = {"chat_id": CHAT_ID, "text": text, "parse_mode": "Markdown"}
+    requests.post(f'https://api.telegram.org/bot{TOKEN}/sendMessage', data={'chat_id': CHAT_ID, 'text': text, 'parse_mode': 'Markdown'})
     
-    try:
-        requests.post(url, data=payload)
-    except:
-        pass
-
-    return """
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            body { font-family: sans-serif; background: #eef2f3; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-            .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; max-width: 400px; width: 90%; }
-            h1 { color: #2c3e50; }
-            p { color: #7f8c8d; }
-            .btn { display: inline-block; margin-top: 20px; padding: 12px 30px; background: #27ae60; color: white; text-decoration: none; border-radius: 50px; }
-        </style>
-    </head>
-    <body>
-        <div class="card">
-            <h1 style="color:#f39c12;">Order Pending!</h1>
-            <p>Your diamonds will be added within 5-10 minutes.</p>
-            <a href="/" class="btn">Back to Home</a>
-        </div>
-    </body>
-    </html>
-    """
+    return '<body style=\"text-align:center;padding-top:100px;font-family:sans-serif;background:#f0f4f8;\"><h1>Order Success!</h1><p>Wait 5-10 mins.</p><a href=\"/\">Back to Home</a></body>'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)" > app.py
+
