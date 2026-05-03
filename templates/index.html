@@ -3,65 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axio Top Up</title>
+    <title>AXIO TOP UP</title>
     <style>
-        body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; margin: 0; padding: 15px; }
-        .container { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 500px; margin: auto; }
-        h2 { text-align: center; color: #1a73e8; margin-top: 0; }
-        .payment-info { background: #e8f0fe; padding: 15px; border-radius: 10px; border-left: 5px solid #1a73e8; margin-bottom: 20px; }
-        .payment-info p { margin: 5px 0; color: #1967d2; font-weight: bold; }
-        .packages-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 25px; }
-        .package-card { border: 1px solid #d1e3fa; padding: 12px; border-radius: 10px; font-size: 13px; background: #f8fbff; transition: 0.3s; }
-        .package-card:hover { border-color: #1a73e8; }
-        .price { float: right; color: #e67e22; font-weight: bold; }
-        form { display: flex; flex-direction: column; gap: 15px; }
-        input, select, button { padding: 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; outline: none; }
-        input:focus { border-color: #1a73e8; }
-        button { background-color: #1a73e8; color: white; border: none; cursor: pointer; font-weight: bold; transition: 0.3s; }
-        button:hover { background-color: #1557b0; }
+        body { font-family: "Segoe UI", sans-serif; background-color: #f0f2f5; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        .header { background-color: #0d1b2a; color: white; width: 100%; padding: 18px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header h1 { margin: 0; padding-left: 20px; font-size: 22px; letter-spacing: 1px; }
+        .main-card { background: white; width: 92%; max-width: 480px; margin: 20px 0; border-radius: 20px; padding: 20px; box-shadow: 0 4px 25px rgba(0,0,0,0.06); }
+        .title { color: #5c7cfa; font-size: 19px; font-weight: bold; margin-bottom: 15px; }
+        .payment-info { background: #f8f9fa; border-radius: 12px; padding: 12px; margin-bottom: 20px; border-left: 4px solid #5c7cfa; }
+        .payment-info p { margin: 4px 0; font-size: 14px; font-weight: 600; color: #333; }
+        .package-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+        .package-item { border: 1.5px solid #e9ecef; border-radius: 12px; padding: 12px; text-align: center; cursor: pointer; transition: 0.2s; background: #fff; }
+        .package-item:hover { border-color: #748ffc; background: #f1f3ff; }
+        .package-item.selected { border-color: #5c7cfa; background: #edf2ff; box-shadow: 0 0 0 2px rgba(92, 124, 250, 0.2); }
+        .package-name { display: block; font-size: 13px; font-weight: 600; color: #495057; }
+        .package-price { display: block; font-size: 15px; font-weight: 800; color: #f76707; margin-top: 4px; }
+        label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; color: #495057; }
+        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1.5px solid #dee2e6; border-radius: 10px; font-size: 14px; box-sizing: border-box; }
+        .btn-order { width: 100%; background: #5c7cfa; color: white; border: none; padding: 15px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px; }
     </style>
 </head>
 <body>
-<div class="container">
-    <h2>Axio Top Up</h2>
-    <div class="payment-info">
-        <p>Bkash Personal: 01931931670</p>
-        <p>Nagad Personal: 01931931670</p>
+    <div class="header"><h1>AXIO TOP UP</h1></div>
+    <div class="main-card">
+        <div class="title">Free Fire UID Topup</div>
+        <div class="payment-info">
+            <p>Bkash / Nagad: 01931931670</p>
+        </div>
+        <label>Select Package (Click to Select)</label>
+        <div class="package-grid">
+            <div class="package-item" onclick="selectPack(this, 25 Diamond, 17)"><span class="package-name">25 Diamond</span><span class="package-price">17 TK</span></div>
+            <div class="package-item" onclick="selectPack(this, 50 Diamond, 31)"><span class="package-name">50 Diamond</span><span class="package-price">31 TK</span></div>
+            <div class="package-item" onclick="selectPack(this, 100 Diamond, 67)"><span class="package-name">100 Diamond</span><span class="package-price">67 TK</span></div>
+            <div class="package-item" onclick="selectPack(this, 115 Diamond, 71)"><span class="package-name">115 Diamond</span><span class="package-price">71 TK</span></div>
+            <div class="package-item" onclick="selectPack(this, Weekly, 145)"><span class="package-name">Weekly</span><span class="package-price">145 TK</span></div>
+            <div class="package-item" onclick="selectPack(this, Monthly, 745)"><span class="package-name">Monthly</span><span class="package-price">745 TK</span></div>
+            <div class="package-item" onclick="selectPack(this, Level Up, 415)"><span class="package-name">Level Up Pass</span><span class="package-price">415 TK</span></div>
+            <div class="package-item" onclick="selectPack(this, 1090 Diamond, 690)"><span class="package-name">1090 Diamond</span><span class="package-price">690 TK</span></div>
+        </div>
+        <form action="/order" method="POST">
+            <input type="hidden" name="package" id="selectedPackageInput" required>
+            <label>Player ID (UID)</label>
+            <input type="text" name="player_id" placeholder="Enter UID" required>
+            <label>Payment Method</label>
+            <select name="payment_method" required>
+                <option value="bkash">Bkash</option>
+                <option value="Nagad">Nagad</option>
+            </select>
+            <label>Transaction ID</label>
+            <input type="text" name="trx_id" placeholder="Enter TrxID" required>
+            <button type="submit" class="btn-order">Order Now</button>
+        </form>
     </div>
-    <div class="packages-container">
-        <div class="package-card">25 Diamond <span class="price">17 TK</span></div>
-        <div class="package-card">50 Diamond <span class="price">31 TK</span></div>
-        <div class="package-card">100 Diamond <span class="price">67 TK</span></div>
-        <div class="package-card">115 Diamond <span class="price">71 TK</span></div>
-        <div class="package-card">240 Diamond <span class="price">147 TK</span></div>
-        <div class="package-card">355 Diamond <span class="price">225 TK</span></div>
-        <div class="package-card">505 Diamond <span class="price">335 TK</span></div>
-        <div class="package-card">610 Diamond <span class="price">380 TK</span></div>
-        <div class="package-card">1090 Diamond <span class="price">690 TK</span></div>
-        <div class="package-card">Weekly <span class="price">145 TK</span></div>
-        <div class="package-card">Monthly <span class="price">745 TK</span></div>
-        <div class="package-card">Weekly Lite <span class="price">37 TK</span></div>
-        <div class="package-card">Full Level up <span class="price">415 TK</span></div>
-    </div>
-    <form action="/order" method="POST">
-        <input type="text" name="player_id" placeholder="Enter Player ID" required>
-        <select name="package" required>
-            <option value="" disabled selected>Select Package</option>
-            <option value="25_Diamond_17tk">25 Diamond - 17 TK</option>
-            <option value="50_Diamond_31tk">50 Diamond - 31 TK</option>
-            <option value="100_Diamond_67tk">100 Diamond - 67 TK</option>
-            <option value="Weekly_145tk">Weekly - 145 TK</option>
-            <option value="Monthly_745tk">Monthly - 745 TK</option>
-            <option value="Level_Up_415tk">Full Level up - 415 TK</option>
-        </select>
-        <select name="payment_method" required>
-            <option value="" disabled selected>Select Payment Method</option>
-            <option value="Bkash">Bkash</option>
-            <option value="Nagad">Nagad</option>
-        </select>
-        <input type="text" name="trx_id" placeholder="Enter Transaction ID (TrxID)" required>
-        <button type="submit">Complete Order</button>
-    </form>
-</div>
+    <script>
+        function selectPack(element, name, price) {
+            document.querySelectorAll(.package-item).forEach(item => item.classList.remove(selected));
+            element.classList.add(selected);
+            document.getElementById(selectedPackageInput).value = name +  -  + price +  TK;
+        }
+    </script>
 </body>
 </html>
