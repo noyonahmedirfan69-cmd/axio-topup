@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Axio Top Up</title>
     <style>
-        body { font-family: sans-serif; background-color: #f4f4f4; margin: 0; padding: 10px; }
-        .container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h2 { text-align: center; color: #333; }
-        .packages-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
-        .package-card { border: 1px solid #ddd; padding: 10px; border-radius: 8px; font-size: 14px; background: #fff; }
-        .price { float: right; color: orange; font-weight: bold; }
+        body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; margin: 0; padding: 15px; }
+        .container { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 500px; margin: auto; }
+        h2 { text-align: center; color: #1a73e8; margin-top: 0; }
+        .payment-info { background: #e8f0fe; padding: 15px; border-radius: 10px; border-left: 5px solid #1a73e8; margin-bottom: 20px; }
+        .payment-info p { margin: 5px 0; color: #1967d2; font-weight: bold; }
+        .packages-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 25px; }
+        .package-card { border: 1px solid #d1e3fa; padding: 12px; border-radius: 10px; font-size: 13px; background: #f8fbff; transition: 0.3s; }
+        .package-card:hover { border-color: #1a73e8; }
+        .price { float: right; color: #e67e22; font-weight: bold; }
         form { display: flex; flex-direction: column; gap: 15px; }
-        input, select, button { padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; }
-        button { background-color: #27ae60; color: white; border: none; cursor: pointer; font-weight: bold; }
-        .payment-info { background: #e3f2fd; padding: 15px; border-radius: 5px; border: 1px solid #90caf9; margin-bottom: 15px; }
+        input, select, button { padding: 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; outline: none; }
+        input:focus { border-color: #1a73e8; }
+        button { background-color: #1a73e8; color: white; border: none; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        button:hover { background-color: #1557b0; }
     </style>
 </head>
 <body>
 <div class="container">
     <h2>Axio Top Up</h2>
     <div class="payment-info">
-        <p style="margin: 5px 0;"><b>Bkash Personal:</b> 01XXXXXXXXX</p>
-        <p style="margin: 5px 0;"><b>Nagad Personal:</b> 01XXXXXXXXX</p>
+        <p>Bkash Personal: 01931931670</p>
+        <p>Nagad Personal: 01931931670</p>
     </div>
     <div class="packages-container">
         <div class="package-card">25 Diamond <span class="price">17 TK</span></div>
