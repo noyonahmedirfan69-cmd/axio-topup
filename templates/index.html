@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXIO TOP UP</title>
+    <style>
+        body { font-family: "Segoe UI", sans-serif; background: #f1f5f9; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        .header { background: #1e293b; color: white; width: 100%; padding: 18px 0; text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .header h1 { margin: 0; padding-left: 20px; font-size: 22px; font-weight: 800; letter-spacing: 1px; }
+        .main-card { background: white; width: 92%; max-width: 480px; margin: 25px 0; border-radius: 24px; padding: 25px; box-shadow: 0 15px 30px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; }
+        .title { color: #4338ca; font-size: 22px; font-weight: 800; margin-bottom: 20px; text-align: center; }
+        .payment-info { background: #eff6ff; border-radius: 16px; padding: 15px; margin-bottom: 25px; border: 2px dashed #60a5fa; text-align: center; }
+        .payment-info p { margin: 5px 0; font-size: 16px; font-weight: bold; color: #1e40af; }
+        
+        .package-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 25px; }
+        .package-item { border: 2px solid #f1f5f9; border-radius: 18px; padding: 18px 10px; text-align: center; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); background: #ffffff; position: relative; overflow: hidden; }
+        
+        /* Hover Effect */
+        .package-item:hover { border-color: #c7d2fe; transform: translateY(-3px); }
+        
+        /* Selection Style */
+        .package-item.selected { border-color: #4338ca; background: #eef2ff; box-shadow: 0 8px 20px rgba(67, 56, 202, 0.15); }
+        .package-item.selected::after { content: '✓'; position: absolute; top: 5px; right: 8px; background: #4338ca; color: white; width: 18px; height: 18px; border-radius: 50%; font-size: 12px; line-height: 18px; }
+
+        .package-name { display: block; font-size: 14px; font-weight: 600; color: #64748b; margin-bottom: 4px; }
+        .package-price { display: block; font-size: 18px; font-weight: 800; color: #ea580c; }
+
+        label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 700; color: #334155; }
+        input, select { width: 100%; padding: 15px; margin-bottom: 18px; border: 2px solid #f1f5f9; border-radius: 14px; font-size: 15px; box-sizing: border-box; outline: none; }
+        input:focus { border-color: #4338ca; background: #fff; }
+        
+        .btn-order { width: 100%; background: #4338ca; color: white; border: none; padding: 18px; border-radius: 14px; font-size: 18px; font-weight: 800; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(67, 56, 202, 0.3); }
+        .btn-order:hover { background: #3730a3; }
+    </style>
+</head>
+<body>
+    <div class="header"><h1>AXIO TOP UP</h1></div>
+    <div class="main-card">
+        <div class="title">Free Fire Topup</div>
+        <div class="payment-info"><p>Bkash / Nagad: 01931931670</p></div>
+        
+        <label>Select Package:</label>
+        <div class="package-grid">
+            <div class="package-item" onclick="selectPack(this, '25 Diamond', '17')"><span class="package-name">25 Diamond</span><span class="package-price">17 TK</span></div>
+            <div class="package-item" onclick="selectPack(this, '50 Diamond', '31')"><span class="package-name">50 Diamond</span><span class="package-price">31 TK</span></div>
+            <div class="package-item" onclick="selectPack(this, '100 Diamond', '67')"><span class="package-name">100 Diamond</span><span class="package-price">67 TK</span></div>
+            <div class="package-item" onclick="selectPack(this, '115 Diamond', '71')"><span class="package-name">115 Diamond</span><span class="package-price">71 TK</span></div>
+            <div class="package-item" onclick="selectPack(this, 'Weekly', '145')"><span class="package-name">Weekly</span><span class="package-price">145 TK</span></div>
+            <div class="package-item" onclick="selectPack(this, 'Level Up', '415')"><span class="package-name">Level Up</span><span class="package-price">415 TK</span></div>
+        </div>
+
+        <form action="/order" method="POST">
+            <input type="hidden" name="package" id="p_val" required>
+            <label>Player UID</label>
+            <input type="text" name="player_id" placeholder="Enter UID" required>
+            <label>Payment Method</label>
+            <select name="payment_method">
+                <option value="bkash">bkash</option>
+                <option value="Nagad">Nagad</option>
+            </select>
+            <label>TrxID</label>
+            <input type="text" name="trx_id" placeholder="Enter Transaction ID" required>
+            <button type="submit" class="btn-order">Order Now</button>
+        </form>
+    </div>
+    <script>
+        function selectPack(element, name, price) {
+            var items = document.querySelectorAll('.package-item');
+            items.forEach(function(item) {
+                item.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            document.getElementById('p_val').value = name + " - " + price + " TK";
+        }
+    </script>
+</body>
+</html>
