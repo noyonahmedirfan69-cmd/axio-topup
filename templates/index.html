@@ -27,29 +27,22 @@
     <div class="header"><h1>AXIO TOP UP</h1></div>
     <div class="main-card">
         <div class="title">Free Fire UID Topup</div>
-        <div class="payment-info">
-            <p>Bkash / Nagad: 01931931670</p>
-        </div>
-        <label>Select Package (Click to Select)</label>
+        <div class="payment-info"><p>Bkash / Nagad: 01931931670</p></div>
+        <label>Select Package</label>
         <div class="package-grid">
             <div class="package-item" onclick="selectPack(this, 25 Diamond, 17)"><span class="package-name">25 Diamond</span><span class="package-price">17 TK</span></div>
             <div class="package-item" onclick="selectPack(this, 50 Diamond, 31)"><span class="package-name">50 Diamond</span><span class="package-price">31 TK</span></div>
             <div class="package-item" onclick="selectPack(this, 100 Diamond, 67)"><span class="package-name">100 Diamond</span><span class="package-price">67 TK</span></div>
-            <div class="package-item" onclick="selectPack(this, 115 Diamond, 71)"><span class="package-name">115 Diamond</span><span class="package-price">71 TK</span></div>
             <div class="package-item" onclick="selectPack(this, Weekly, 145)"><span class="package-name">Weekly</span><span class="package-price">145 TK</span></div>
             <div class="package-item" onclick="selectPack(this, Monthly, 745)"><span class="package-name">Monthly</span><span class="package-price">745 TK</span></div>
             <div class="package-item" onclick="selectPack(this, Level Up, 415)"><span class="package-name">Level Up Pass</span><span class="package-price">415 TK</span></div>
-            <div class="package-item" onclick="selectPack(this, 1090 Diamond, 690)"><span class="package-name">1090 Diamond</span><span class="package-price">690 TK</span></div>
         </div>
         <form action="/order" method="POST">
             <input type="hidden" name="package" id="selectedPackageInput" required>
             <label>Player ID (UID)</label>
             <input type="text" name="player_id" placeholder="Enter UID" required>
             <label>Payment Method</label>
-            <select name="payment_method" required>
-                <option value="bkash">Bkash</option>
-                <option value="Nagad">Nagad</option>
-            </select>
+            <select name="payment_method" required><option value="bkash">Bkash</option><option value="Nagad">Nagad</option></select>
             <label>Transaction ID</label>
             <input type="text" name="trx_id" placeholder="Enter TrxID" required>
             <button type="submit" class="btn-order">Order Now</button>
