@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body { font-family: sans-serif; background: #000; color: #fff; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
         .card { background: #111; width: 90%; max-width: 400px; padding: 25px; border-radius: 20px; border: 2px solid #4169e1; display: none; }
         .active { display: block; }
-        h2 { color: #4169e1; text-align: center; margin-top: 0; }
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
         .item { border: 2px solid #333; border-radius: 12px; padding: 15px; text-align: center; cursor: pointer; }
         .selected { border-color: #4169e1; background: rgba(65, 105, 225, 0.1); }
@@ -34,10 +34,9 @@
     <div id="top" class="card">
         <h2>AXIO TOP UP</h2>
         <div class="grid">
-            <div class="item" onclick="sel(this,'25 D - 17 TK')">25 Diamonds<br>17 TK</div>
-            <div class="item" onclick="sel(this,'50 D - 31 TK')">50 Diamonds<br>31 TK</div>
-            <div class="item" onclick="sel(this,'100 D - 67 TK')">100 Diamonds<br>67 TK</div>
-            <div class="item" onclick="sel(this,'Weekly - 145 TK')">Weekly<br>145 TK</div>
+            {% for o in offers %}
+            <div class="item" onclick="sel(this, '{{o.name}} - {{o.price}} TK')">{{o.name}}<br>{{o.price}} TK</div>
+            {% endfor %}
         </div>
         <form action="/order" method="POST">
             <input type="hidden" name="package" id="p_in" required>
